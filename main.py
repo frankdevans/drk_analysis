@@ -34,7 +34,7 @@ def text_breakdown(results):
 		)
 		page.append(f'Linear Regression - {int_line}, {norm_line}')
 		page.append('')
-		
+
 		page.append('Features: {fea} | Labels: {lab}'.format(
 			fea = ', '.join(res['selection']['features']),
 			lab = res['selection']['labels']
@@ -43,7 +43,7 @@ def text_breakdown(results):
 		page.append("Coefficient of Determination (R²): {cd}".format(
 			cd = round(res['results']['coef_det'], 3)
 		))
-		page.append("Coefficient of Determination (R): {int}".format(
+		page.append("Intercept: {int}".format(
 			int = round(res['results']['intercept'], 3)
 		))
 		page.append('')
@@ -54,7 +54,7 @@ def text_breakdown(results):
 
 
 		coll.append('\n'.join(page))
-		
+
 	output = '\n\n-------------------------\n\n'.join(coll)
 	return output
 
@@ -85,8 +85,8 @@ for (label_field, intercept, normalize) in itertools.product(ind_fields, bools, 
 	results.append(output)
 
 
-with open(f'./data/results_{datecode}.json', 'w') as f: 
+with open(f'./data/results_{datecode}.json', 'w') as f:
 	json.dump(results, f)
 
-with open(f'./data/results_{datecode}.txt', 'w') as f: 
+with open(f'./data/results_{datecode}.txt', 'w') as f:
 	f.write(text_breakdown(results))
