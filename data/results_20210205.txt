@@ -1,0 +1,109 @@
+Linear Regression - intercept computed, data normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: pct_punch_laughs
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.302
+Coefficient of Determination (R): 0.903
+
+Feature Coefficients
+punch_min: -0.046
+sec_punch: -0.018
+experience_months: 0.002
+
+-------------------------
+
+Linear Regression - intercept computed, data not normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: pct_punch_laughs
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.302
+Coefficient of Determination (R): 0.903
+
+Feature Coefficients
+punch_min: -0.046
+sec_punch: -0.018
+experience_months: 0.002
+
+-------------------------
+
+Linear Regression - no intercept computed, data normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: pct_punch_laughs
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.265
+Coefficient of Determination (R): 0.0
+
+Feature Coefficients
+punch_min: 0.051
+sec_punch: 0.014
+experience_months: 0.002
+
+-------------------------
+
+Linear Regression - no intercept computed, data not normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: pct_punch_laughs
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.265
+Coefficient of Determination (R): 0.0
+
+Feature Coefficients
+punch_min: 0.051
+sec_punch: 0.014
+experience_months: 0.002
+
+-------------------------
+
+Linear Regression - intercept computed, data normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: laughs_min
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.562
+Coefficient of Determination (R): 1.539
+
+Feature Coefficients
+punch_min: 0.367
+sec_punch: -0.075
+experience_months: 0.008
+
+-------------------------
+
+Linear Regression - intercept computed, data not normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: laughs_min
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.562
+Coefficient of Determination (R): 1.539
+
+Feature Coefficients
+punch_min: 0.367
+sec_punch: -0.075
+experience_months: 0.008
+
+-------------------------
+
+Linear Regression - no intercept computed, data normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: laughs_min
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.559
+Coefficient of Determination (R): 0.0
+
+Feature Coefficients
+punch_min: 0.532
+sec_punch: -0.022
+experience_months: 0.009
+
+-------------------------
+
+Linear Regression - no intercept computed, data not normalized
+
+Features: punch_min, sec_punch, experience_months | Labels: laughs_min
+Number of Data Points (n): 62
+Coefficient of Determination (R²): 0.559
+Coefficient of Determination (R): 0.0
+
+Feature Coefficients
+punch_min: 0.532
+sec_punch: -0.022
+experience_months: 0.009
