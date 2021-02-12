@@ -3,8 +3,8 @@ import csv
 def load_data(path):
 	data = []
 	fields = [
-		'title', 'time', 'punchlines', 'laughs', 
-		'pct', 'laughs_min', 'punch_min', 'spp', 'experience'
+		'title', 'time_sec', 'n_punch', 'n_laughs', 'pct_punch_laughs', 
+		'laughs_min', 'punch_min', 'sec_punch', 'experience_months',
 	]
 	with open(path, 'r') as f:
 		reader = csv.DictReader(f, delimiter = '\t', fieldnames = fields)

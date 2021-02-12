@@ -11,5 +11,5 @@ def make_matrix(data, fields):
 	for field in fields:
 		values.append([i[field] for i in data])
 	
-	output = np.array(values)
+	output = np.array(values).T
 	return output
