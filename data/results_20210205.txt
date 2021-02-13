@@ -1,3 +1,18 @@
+Pearson Correlation Matrix
+
+punch_min | sec_punch : -0.946
+punch_min | experience_months : 0.336
+punch_min | pct_punch_laughs : 0.208
+punch_min | laughs_min : 0.671
+sec_punch | experience_months : -0.396
+sec_punch | pct_punch_laughs : -0.271
+sec_punch | laughs_min : -0.684
+experience_months | pct_punch_laughs : 0.538
+experience_months | laughs_min : 0.532
+pct_punch_laughs | laughs_min : 0.844
+
+-------------------------
+
 Linear Regression - intercept computed, data normalized
 
 Features: punch_min, sec_punch, experience_months | Labels: pct_punch_laughs

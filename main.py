@@ -1,10 +1,19 @@
 import json, itertools
 
 from lib import wrangle, conversion
+
+import numpy as np
 from sklearn.linear_model import LinearRegression
 
 
-def run_model(features, labels, intercept, normalize):
+# Analytic Helpers ---------------------------------------------------------------------------------
+
+def run_corr(x, y):
+	res = np.corrcoef(x, y)
+	scalar = float(res[0][1])
+	return scalar
+
+def run_linear_model(features, labels, intercept, normalize):
 	model = LinearRegression(fit_intercept = intercept, normalize = normalize)
 	model.fit(X = features, y = labels)
 
@@ -22,7 +31,19 @@ def run_model(features, labels, intercept, normalize):
 
 	return res
 
-def text_breakdown(results):
+# Output Helpers -----------------------------------------------------------------------------------
+
+def text_breakdown_corr(results):
+	coll = []
+	coll.append('Pearson Correlation Matrix')
+	coll.append('')
+	for res in results:
+		coll.append(f"{res['x']} | {res['y']} : {round(res['corr'], 3)}")
+	
+	output = '\n'.join(coll)
+	return output
+
+def text_breakdown_linear(results):
 	coll = []
 	for res in results:
 		page = []
@@ -58,35 +79,68 @@ def text_breakdown(results):
 	output = '\n\n-------------------------\n\n'.join(coll)
 	return output
 
-#--
+def assemble_output(results, datecode):
+	with open(f'./data/results_{datecode}.json', 'w') as f: json.dump(results, f)
+
+	pages = []
+	pages.append(text_breakdown_corr(results['PearsonCorrelation']))
+	pages.append(text_breakdown_linear(results['LinearRegression']))
+	
+	text = '\n\n-------------------------\n\n'.join(pages)
+	with open(f'./data/results_{datecode}.txt', 'w') as f: f.write(text)
+	return
+
+# Responders ---------------------------------------------------------------------------------------
+
+def run_correlations(data):
+	fields = ['punch_min', 'sec_punch', 'experience_months', 'pct_punch_laughs', 'laughs_min',]
+
+	results = []
+	for (x,y) in itertools.combinations(fields, 2):
+		corr = run_corr(
+			x = conversion.make_array(data, x),
+			y = conversion.make_array(data, y)
+		)
+		results.append({'x': x, 'y': y, 'corr': corr})
+	
+	return results
+
+def run_linear_models(data):
+	dep_fields = ['punch_min', 'sec_punch', 'experience_months']
+	ind_fields = ['pct_punch_laughs', 'laughs_min']
+	bools = [True, False]
+
+	results = []
+	for (label_field, intercept, normalize) in itertools.product(ind_fields, bools, bools):
+		output = {}
+		output['selection'] = {
+			'features': dep_fields,
+			'labels': label_field,
+			'n': len(data)
+		}
+		output.update(run_linear_model(
+			features = conversion.make_matrix(data, dep_fields),
+			labels = conversion.make_array(data, label_field),
+			intercept = intercept,
+			normalize = normalize
+		))
+		results.append(output)
+
+	return results
+
+def run_package(datecode):
+	path = f'./data/received_{datecode}.txt'
+	data = wrangle(path)
+
+	results  ={}
+	results['PearsonCorrelation'] = run_correlations(data)
+	results['LinearRegression'] = run_linear_models(data)
+	
+	assemble_output(results, datecode)
+
+	return
+
+# Interface ----------------------------------------------------------------------------------------
 
 datecode = '20210205'
-path = f'./data/received_{datecode}.txt'
-data = wrangle(path)
-
-dep_fields = ['punch_min', 'sec_punch', 'experience_months']
-ind_fields = ['pct_punch_laughs', 'laughs_min']
-bools = [True, False]
-
-results = []
-for (label_field, intercept, normalize) in itertools.product(ind_fields, bools, bools):
-	output = {}
-	output['selection'] = {
-		'features': dep_fields,
-		'labels': label_field,
-		'n': len(data)
-	}
-	output.update(run_model(
-		features = conversion.make_matrix(data, dep_fields),
-		labels = conversion.make_array(data, label_field),
-		intercept = intercept,
-		normalize = normalize
-	))
-	results.append(output)
-
-
-with open(f'./data/results_{datecode}.json', 'w') as f:
-	json.dump(results, f)
-
-with open(f'./data/results_{datecode}.txt', 'w') as f:
-	f.write(text_breakdown(results))
+run_package(datecode)

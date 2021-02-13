@@ -1,234 +1,288 @@
-[
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "pct_punch_laughs",
-			"n": 62
+{
+	"PearsonCorrelation": [
+		{
+			"x": "punch_min",
+			"y": "sec_punch",
+			"corr": -0.9455152028078576
 		},
-		"params": {
-			"intercept": true,
-			"normalized": true
+		{
+			"x": "punch_min",
+			"y": "experience_months",
+			"corr": 0.3358476120926562
 		},
-		"results": {
-			"coef_det": 0.30165737184120633,
-			"coef": [
-				-0.046219845181239866,
-				-0.017537263072629743,
-				0.0020085321206993684
-			],
-			"intercept": 0.903191317654302,
-			"singular": [
-				1.4744339589503725,
-				0.8796716515848763,
-				0.2285219597585009
-			]
+		{
+			"x": "punch_min",
+			"y": "pct_punch_laughs",
+			"corr": 0.20808693954023116
+		},
+		{
+			"x": "punch_min",
+			"y": "laughs_min",
+			"corr": 0.6713576690375647
+		},
+		{
+			"x": "sec_punch",
+			"y": "experience_months",
+			"corr": -0.39624819580734977
+		},
+		{
+			"x": "sec_punch",
+			"y": "pct_punch_laughs",
+			"corr": -0.27138544424675715
+		},
+		{
+			"x": "sec_punch",
+			"y": "laughs_min",
+			"corr": -0.684485614244519
+		},
+		{
+			"x": "experience_months",
+			"y": "pct_punch_laughs",
+			"corr": 0.53829549850961
+		},
+		{
+			"x": "experience_months",
+			"y": "laughs_min",
+			"corr": 0.5322550355764128
+		},
+		{
+			"x": "pct_punch_laughs",
+			"y": "laughs_min",
+			"corr": 0.8443502403096318
 		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "pct_punch_laughs",
-			"n": 62
+	],
+	"LinearRegression": [
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "pct_punch_laughs",
+				"n": 62
+			},
+			"params": {
+				"intercept": true,
+				"normalized": true
+			},
+			"results": {
+				"coef_det": 0.30165737184120633,
+				"coef": [
+					-0.046219845181239866,
+					-0.017537263072629743,
+					0.0020085321206993684
+				],
+				"intercept": 0.903191317654302,
+				"singular": [
+					1.4744339589503725,
+					0.8796716515848763,
+					0.2285219597585009
+				]
+			}
 		},
-		"params": {
-			"intercept": true,
-			"normalized": false
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "pct_punch_laughs",
+				"n": 62
+			},
+			"params": {
+				"intercept": true,
+				"normalized": false
+			},
+			"results": {
+				"coef_det": 0.30165737184120633,
+				"coef": [
+					-0.046219845181239214,
+					-0.017537263072629553,
+					0.0020085321206993675
+				],
+				"intercept": 0.9031913176542965,
+				"singular": [
+					386.7736789738245,
+					28.465647965183603,
+					2.866420321735154
+				]
+			}
 		},
-		"results": {
-			"coef_det": 0.30165737184120633,
-			"coef": [
-				-0.046219845181239214,
-				-0.017537263072629553,
-				0.0020085321206993675
-			],
-			"intercept": 0.9031913176542965,
-			"singular": [
-				386.7736789738245,
-				28.465647965183603,
-				2.866420321735154
-			]
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "pct_punch_laughs",
+				"n": 62
+			},
+			"params": {
+				"intercept": false,
+				"normalized": true
+			},
+			"results": {
+				"coef_det": 0.2652951440915424,
+				"coef": [
+					0.0507565431790989,
+					0.01379720388227704,
+					0.002232731474269249
+				],
+				"intercept": 0.0,
+				"singular": [
+					744.9627395864514,
+					72.4617571122799,
+					13.993129248969687
+				]
+			}
+		},
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "pct_punch_laughs",
+				"n": 62
+			},
+			"params": {
+				"intercept": false,
+				"normalized": false
+			},
+			"results": {
+				"coef_det": 0.2652951440915424,
+				"coef": [
+					0.0507565431790989,
+					0.01379720388227704,
+					0.002232731474269249
+				],
+				"intercept": 0.0,
+				"singular": [
+					744.9627395864514,
+					72.4617571122799,
+					13.993129248969687
+				]
+			}
+		},
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "laughs_min",
+				"n": 62
+			},
+			"params": {
+				"intercept": true,
+				"normalized": true
+			},
+			"results": {
+				"coef_det": 0.561910745536002,
+				"coef": [
+					0.3671907740073116,
+					-0.07507731782757911,
+					0.008264653503974316
+				],
+				"intercept": 1.5393467080506171,
+				"singular": [
+					1.4744339589503725,
+					0.8796716515848763,
+					0.2285219597585009
+				]
+			}
+		},
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "laughs_min",
+				"n": 62
+			},
+			"params": {
+				"intercept": true,
+				"normalized": false
+			},
+			"results": {
+				"coef_det": 0.561910745536002,
+				"coef": [
+					0.3671907740073138,
+					-0.07507731782757845,
+					0.008264653503974317
+				],
+				"intercept": 1.5393467080505978,
+				"singular": [
+					386.7736789738245,
+					28.465647965183603,
+					2.866420321735154
+				]
+			}
+		},
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "laughs_min",
+				"n": 62
+			},
+			"params": {
+				"intercept": false,
+				"normalized": true
+			},
+			"results": {
+				"coef_det": 0.5592468979252966,
+				"coef": [
+					0.5324716854412528,
+					-0.021672676294013656,
+					0.008646765831804482
+				],
+				"intercept": 0.0,
+				"singular": [
+					744.9627395864514,
+					72.4617571122799,
+					13.993129248969687
+				]
+			}
+		},
+		{
+			"selection": {
+				"features": [
+					"punch_min",
+					"sec_punch",
+					"experience_months"
+				],
+				"labels": "laughs_min",
+				"n": 62
+			},
+			"params": {
+				"intercept": false,
+				"normalized": false
+			},
+			"results": {
+				"coef_det": 0.5592468979252966,
+				"coef": [
+					0.5324716854412528,
+					-0.021672676294013656,
+					0.008646765831804482
+				],
+				"intercept": 0.0,
+				"singular": [
+					744.9627395864514,
+					72.4617571122799,
+					13.993129248969687
+				]
+			}
 		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "pct_punch_laughs",
-			"n": 62
-		},
-		"params": {
-			"intercept": false,
-			"normalized": true
-		},
-		"results": {
-			"coef_det": 0.2652951440915424,
-			"coef": [
-				0.0507565431790989,
-				0.01379720388227704,
-				0.002232731474269249
-			],
-			"intercept": 0.0,
-			"singular": [
-				744.9627395864514,
-				72.4617571122799,
-				13.993129248969687
-			]
-		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "pct_punch_laughs",
-			"n": 62
-		},
-		"params": {
-			"intercept": false,
-			"normalized": false
-		},
-		"results": {
-			"coef_det": 0.2652951440915424,
-			"coef": [
-				0.0507565431790989,
-				0.01379720388227704,
-				0.002232731474269249
-			],
-			"intercept": 0.0,
-			"singular": [
-				744.9627395864514,
-				72.4617571122799,
-				13.993129248969687
-			]
-		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "laughs_min",
-			"n": 62
-		},
-		"params": {
-			"intercept": true,
-			"normalized": true
-		},
-		"results": {
-			"coef_det": 0.561910745536002,
-			"coef": [
-				0.3671907740073116,
-				-0.07507731782757911,
-				0.008264653503974316
-			],
-			"intercept": 1.5393467080506171,
-			"singular": [
-				1.4744339589503725,
-				0.8796716515848763,
-				0.2285219597585009
-			]
-		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "laughs_min",
-			"n": 62
-		},
-		"params": {
-			"intercept": true,
-			"normalized": false
-		},
-		"results": {
-			"coef_det": 0.561910745536002,
-			"coef": [
-				0.3671907740073138,
-				-0.07507731782757845,
-				0.008264653503974317
-			],
-			"intercept": 1.5393467080505978,
-			"singular": [
-				386.7736789738245,
-				28.465647965183603,
-				2.866420321735154
-			]
-		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "laughs_min",
-			"n": 62
-		},
-		"params": {
-			"intercept": false,
-			"normalized": true
-		},
-		"results": {
-			"coef_det": 0.5592468979252966,
-			"coef": [
-				0.5324716854412528,
-				-0.021672676294013656,
-				0.008646765831804482
-			],
-			"intercept": 0.0,
-			"singular": [
-				744.9627395864514,
-				72.4617571122799,
-				13.993129248969687
-			]
-		}
-	},
-	{
-		"selection": {
-			"features": [
-				"punch_min",
-				"sec_punch",
-				"experience_months"
-			],
-			"labels": "laughs_min",
-			"n": 62
-		},
-		"params": {
-			"intercept": false,
-			"normalized": false
-		},
-		"results": {
-			"coef_det": 0.5592468979252966,
-			"coef": [
-				0.5324716854412528,
-				-0.021672676294013656,
-				0.008646765831804482
-			],
-			"intercept": 0.0,
-			"singular": [
-				744.9627395864514,
-				72.4617571122799,
-				13.993129248969687
-			]
-		}
-	}
-]
+	]
+}
